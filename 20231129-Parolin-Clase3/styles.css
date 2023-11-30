@@ -1,0 +1,146 @@
+body{
+    margin:0%
+}
+
+/*Header */
+header{
+    display: flex;
+}
+
+header .boutique{
+    width: 40%;
+}
+
+header .boutique h2{
+    margin-left: 27%;
+    margin-top: 5%;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+header .opciones ol li{
+    display: inline;
+    text-decoration: none;
+}
+
+header .opciones ol li a{
+    text-decoration: none;
+    color: black;
+    font-family: Impact;
+    padding: 3vh;
+}
+
+header .opciones ol li a:hover{
+    text-decoration: none;
+    color: aqua;
+}
+
+#demos{
+    margin: 2vh;
+    border: none;
+    font-family: Impact;
+    font-size: 1rem;
+}
+
+#blocks{
+    font-family: Impact;
+    border: none;
+    font-size: 1rem;
+}
+
+
+/*Nav */
+
+nav{
+    display: flex;
+    height: 20vh;
+}
+
+/*Barra de busquedas*/
+.barraBusqueda{
+    width: 30%;
+    display: flex;
+}
+
+#buscadora{
+    margin: 15% 0% 15% 45%;
+    padding: 3%;
+    border-radius: 4%;
+}
+
+
+#iconitoBusqueda{
+    max-width: 10%;
+    max-height: 20%;
+    margin-top: 15%;  
+}
+
+
+/*Public precioLista*/
+
+.precioLista{
+    width: 40%;
+}
+
+
+#Lista{
+    background-color: black;
+    color: aliceblue;
+    border: none;
+    margin: 10% 0% 15% 7%;
+    padding: 2%;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+/*Paginas*/
+
+.paginas{
+    text-align: center;
+    margin-top: 3%;
+    margin-right: 5%;
+    width: 30%;
+}
+
+
+.paginas ol li{
+    display: inline;
+    border-radius: 1%;
+}
+
+
+.paginas ol li a{
+    text-decoration: none;
+    color: black;
+    font-family: Impact;
+    padding: 2vh;
+}
+
+.paginas ol li:hover{
+    background-color: aqua;
+}
+
+.prev{
+    background-color: rgb(194, 189, 189);
+}
+
+
+/*Main */
+main{
+    margin: 6%;
+}
+
+
+.item{
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    gap: 1%;
+    border-radius: 1% solid;
+    justify-content: center;
+}
+
+img{
+    max-width: 100%;
+    max-height: 50%;
+    display: block;
+}
+
+

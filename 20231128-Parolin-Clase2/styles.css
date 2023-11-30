@@ -1,0 +1,104 @@
+body{
+    margin: 0%;
+    padding: 0%;
+}
+
+.header{
+    background-color: #333;
+    color: white;
+    padding: 1em;
+    text-align: center;
+}
+
+.header h2{
+    margin: 0%;
+    font-family: Arial;
+    font-size: 2rem;
+}
+
+.header a{
+    display: inline;
+    margin: 1%;
+    font-family: Arial;
+    color: white;
+    text-decoration: none;
+}
+
+.header a:hover{
+    color: red;
+}
+
+.main{
+    padding: 20px;
+    justify-content: space-between;
+    display: flex;
+}
+
+.noticias{
+    margin-bottom: 20px;
+    padding: 15px;
+    display: block;
+}
+
+.noticias h1{
+    color: #333;
+    font-family: Arial;
+}
+
+.noticias p{
+    font-family: Arial;
+}
+.noticias h2{
+    color: red;
+    font-family: Arial;
+}
+
+.noticias thead th{
+    color: black;
+}
+
+.primerNoticia{
+    border: solid 1px;
+    padding-bottom: 4px;
+}
+
+.segundaNoticia{
+    border: solid 1px;
+}
+.aside{
+    background-color: #f4f4f4;
+    padding: 10px;
+    width: 50%;
+    margin-bottom: 4%;
+}
+
+.aside p{
+    font-family: Arial;
+    font-size: 2rem;
+}
+.aside nav a{
+    color: blue;
+    display: block;
+    padding: 2px;
+    transition: 0.3s;
+}
+
+.aside nav a:hover{
+    color: #ffd700;
+}
+
+footer{
+    background-color: #001f3f;
+    color: white;
+    text-align: center;
+    padding: 1em;
+    font-family: Arial;
+    flex-direction: unset;
+    bottom: 0%;
+    position: fixed;
+    width: 100%;
+}
+
+.OtraNoticia{
+    display: block;
+}
