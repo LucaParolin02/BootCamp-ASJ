@@ -25,7 +25,7 @@ var snackPorDia = prompt ("Ingrese la cantidad de snack que consume por dia");
 var snackDia = parseInt(snackPorDia);
 var snackPrecio = prompt("Ingrese precio de su snack favorito");
 snackPrecio = parseInt(snackPrecio);
-var calcular = ((edadMaxima - edad) * snackDia);
+var calcular = ((edadMaxima - edad) * 365 * snackDia);
 var resultado= ("Necesitaras " + calcular + " " + snackFav + " para que te alcancen hasta los " + edadMaxima + " años");
 var precio= (calcular * snackPrecio);
 alert(resultado + " ,el precio a gastar en snacks por el resto de tu vida es " + precio); */
@@ -34,5 +34,5 @@ alert(resultado + " ,el precio a gastar en snacks por el resto de tu vida es " +
 /* var dias = parseInt(prompt("Ingrese la cantidad de días que ira de vacaciones"));
 var presupuestoMaximo = parseInt(prompt("Ingrese el presupuesto maximo que espera gastar"));
 var comida = parseInt(prompt("Ingrese la cantidad de comidas que va a tener en el viaje"));
-var cuantoGastar = (presupuestoMaximo - (comida * dias));
+var cuantoGastar = (presupuestoMaximo / (comida * dias));
 alert("Podes gastar " + cuantoGastar + " en cada comida para que te alcance la plata durante los " + dias + " días de viaje"); */
