@@ -123,7 +123,7 @@ do {
 
 //Ejercicio cliente-mozo
 
-let bienvenida = "Buen dia , bienvenido al restaurante Capriot , ¿ Como le va ?";
+/* let bienvenida = "Buen dia , bienvenido al restaurante Capriot , ¿ Como le va ?";
 let precio = 0;
 let bandera = false;
 alert(bienvenida);
@@ -174,6 +174,31 @@ do{
             alert("Ingrese una opcion válida");
             bandera = true;
     }
-} while (bandera == true);
+} while (bandera == true); */
 
 
+// Ejercicio piramide
+
+/* let numero= parseInt(prompt("Ingrese un numero"));
+let mensaje = "";
+let i= 0;
+
+while ( i < numero){
+    mensaje += "*";
+    console.log(mensaje);
+    i++;
+}
+while ( i > 0){
+        mensaje[i] = "";
+        console.log(mensaje);
+        i--;
+}  */
+
+//Ejercicio factorial
+
+/* let numero2 = parseInt(prompt("Ingrese su numero"));
+let resultado = 1;
+for(let i = 1 ; i <= numero2 ; i++){
+    resultado *= i;
+}
+console.log(resultado); */
