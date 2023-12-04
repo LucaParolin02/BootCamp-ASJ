@@ -124,47 +124,56 @@ do {
 //Ejercicio cliente-mozo
 
 let bienvenida = "Buen dia , bienvenido al restaurante Capriot , ¿ Como le va ?";
-let carta= "Buenas el menu que tenemos en la carta es: Gaseosa - $250,Medialuna - $100,Café - $50,Pizza - $400"
-let precio= 0;
-
+let precio = 0;
+let bandera = false;
 alert(bienvenida);
-let opciones = prompt("Perfecto, Que desea realizar. (Pedir carta, Pedir un chiste, Pedir producto,Traer la cuenta,Propina)").toLowerCase();
-switch(opciones){
+do{
+    let opciones = prompt("Perfecto, Que desea realizar. (Pedir carta, Pedir un chiste, Pedir producto,Traer la cuenta,Propina)").toLowerCase();
+    let carta = "Buenas el menu que tenemos en la carta es: \n Gaseosa - $250 \n Medialuna - $100 \n Café - $50 \n Pizza - $400"
+    switch(opciones){
 
-    case "pedir carta":
+        case "pedir carta":
             alert(carta);
-            break;
-
-    case "pedir un chiste":
-        alert(" ¿Cuál es el baile favorito del tomate? ¡La salsa! ");
         break;
 
+        case "pedir un chiste":
+            alert(" ¿Cuál es el baile favorito del tomate? ¡La salsa! ");
+        break;
 
-    case "pedir producto":
-        let producto= prompt("Que producto desea agregar").toLowerCase();
-        switch(producto){
-            case "gaseosa":
+        case "pedir producto":
+            let producto= prompt("Que producto desea agregar").toLowerCase();
+            switch(producto){
+                case "gaseosa":
                     precio += 250;
+                    break;
 
-            case "medialuna":
-                precio += 100;
+                case "medialuna":
+                    precio += 100;
+                    break;
             
-            case "café":
-                precio += 50;
+                case "café":
+                    precio += 50;
+                    break;
 
-            case "pizza":
-                precio += 400;
+                case "pizza":
+                    precio += 400;
+                    break;
         }
-    
-    case "propina":
-        let propina = parseInt(prompt("¿Cuanta propina desea dejar?"));
-        break;
-    
-    case "Traer la cuenta":
-        alert("La cuenta total seria:" + (precio+propina));
         break;
 
-    default:
-        alert("Ingrese una opcion válida");
-}
+        case "propina":
+            let propina = parseInt(prompt("¿Cuanta propina desea dejar?"));
+        break;
+
+        case "Traer la cuenta":
+            alert("La cuenta total seria:" + (precio+propina));
+            bandera = true;
+        break;
+
+        default:
+            alert("Ingrese una opcion válida");
+            bandera = true;
+    }
+} while (bandera == true);
+
 
