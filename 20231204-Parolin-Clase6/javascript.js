@@ -179,7 +179,7 @@ do{
 
 // Ejercicio piramide
 
-/* let numero= parseInt(prompt("Ingrese un numero"));
+let numero= parseInt(prompt("Ingrese un numero"));
 let mensaje = "";
 let i= 0;
 
@@ -188,11 +188,12 @@ while ( i < numero){
     console.log(mensaje);
     i++;
 }
+mensaje.split();
 while ( i > 0){
         mensaje[i] = "";
         console.log(mensaje);
         i--;
-}  */
+} 
 
 //Ejercicio factorial
 
