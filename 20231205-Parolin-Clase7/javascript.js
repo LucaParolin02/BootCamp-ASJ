@@ -1,4 +1,6 @@
-const bienvenida =  () => {alert("Buen dia , bienvenido al restaurante Capriot , ¿ Como le va ?")};
+//Ejercicio Mozo
+
+/* const bienvenida =  () => {alert("Buen dia , bienvenido al restaurante Capriot , ¿ Como le va ?")};
 const opciones = () => prompt("Perfecto, Que desea realizar. (Pedir carta, Pedir un chiste, Pedir producto,Traer la cuenta,Propina)").toLowerCase();
 const carta  = () => alert("Buenas el menu que tenemos en la carta es: \n Gaseosa - $250 \n Medialuna - $100 \n Café - $50 \n Pizza - $400");
 const pedirPropinas = () =>  parseInt(prompt("¿Cuanta propina desea dejar?"));
@@ -68,4 +70,53 @@ do {
             alert("La opcion que usted eligió no es valida");
     }
 
-} while (bandera == false);
+} while (bandera == false); */
+
+//Fibonacci version 1
+
+/* function fibonacci(numero){
+    const arr = [];
+    let i = 0;
+    let acum = 0;
+    let actual = 1;
+
+    while (i < numero){
+        arr.push(acum);
+        acum += actual;
+        arr.push(actual);
+        actual += acum;
+        i++;
+    }
+
+    console.log(arr);
+}
+
+const suNumero = parseInt(prompt("Ingrese un numero a realizar fibonacci"));
+fibonacci(suNumero); */
+
+// fibonacci version 2
+/* function fibonacci(numero){
+    let arr = [0, 1];
+    for(let i = 2; i < numero; i++){
+        arr[i] = arr[i - 1] + arr[i - 2];
+    }
+    console.log(arr);
+}
+
+const suNumero = parseInt(prompt("Ingrese un numero a realizar fibonacci"));
+fibonacci(suNumero); */
+
+// ejercicio nombre apellido
+
+let boton = document.getElementById("enviar");
+
+boton.addEventListener("click", function(){
+    let nombre = document.getElementById("nombre").value;
+    let apellido = document.getElementById("apellido").value;
+    let nombre1 = document.getElementById("nombre1");
+    let apellido2 = document.getElementById("apellido2");
+
+    nombre1.innerHTML = nombre;
+    apellido2.innerHTML = apellido;
+})
+
