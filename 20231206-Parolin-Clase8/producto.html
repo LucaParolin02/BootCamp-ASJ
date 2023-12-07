@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mouse</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+    crossorigin="anonymous"></script>
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+
+      <a class="navbar-brand" href="ecommerce.html">BOUTIQUE</a>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+        aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+
+      <div class="collapse navbar-collapse justify-content-end " id="navbarNavDropdown">
+        <ul class="navbar-nav">
+
+          <li class="nav-item">
+            <a class="nav-link" href="ecommerce.html">SHOP</a>
+          </li>
+
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="demosDropdown" role="button" data-bs-toggle="dropdown"
+              aria-expanded="false">
+              DEMOS
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="demosDropdown">
+              <li><a class="dropdown-item" href="#">DEMOS1</a></li>
+              <li><a class="dropdown-item" href="#">DEMOS2</a></li>
+              <li><a class="dropdown-item" href="#">DEMOS3</a></li>
+            </ul>
+          </li>
+
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="blocksDropdown" role="button" data-bs-toggle="dropdown"
+              aria-expanded="false">
+              BLOCKS
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="blocksDropdown">
+              <li><a class="dropdown-item" href="#">BLOCKS1</a></li>
+              <li><a class="dropdown-item" href="#">BLOCKS2</a></li>
+              <li><a class="dropdown-item" href="#">BLOCKS3</a></li>
+            </ul>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="/components">COMPONENTS</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="/footer">CONTACT US</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="carrito.html" target="_blank">MY CART</a>
+          </li>
+
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <main>
+    <div class="card mb-5">
+      <div class="row g-0 ">
+        <div class="col-6 border">
+          <img src="img/mouse.jpg" class="img-fluid rounded-start" id="imagen" alt="...">
+        </div>
+        <div class="col-6">
+          <div class="card-body">
+            <h3>Mouse Gamer</h3>
+            <p> $5000</p>
+            <div class="container-fluid p-2 ">
+              <input id="cantidad" type="number" value="0"></input>
+            </div>
+            <div class="container-fluid p-2 ">
+              <button type="submit" class="btn btn-success" id="boton">Añadir carrito</button>
+            </div class="container-fluid ">
+            <p class="card-text">Mouse Gamer Retroiluminado RGB, 6 botones de acción y un botón especial para disparos,
+              resolución seleccionable hasta 3200DPI, ergonómico.
+              6 Meses de Garantía,
+              Origen China.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+  <script src="producto.js"></script>
+</body>
+
+</html>
