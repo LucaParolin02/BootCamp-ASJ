@@ -1,0 +1,13 @@
+body{
+    background-color: black;
+}
+
+.container{
+    text-align: center;
+    color: aliceblue;
+}
+
+#actualizar{
+    background-color: red;
+    color: aliceblue;
+}
