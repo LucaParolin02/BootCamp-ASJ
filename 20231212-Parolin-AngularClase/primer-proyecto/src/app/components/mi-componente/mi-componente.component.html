@@ -1,0 +1,9 @@
+<p> {{titulo}}</p>
+<button (click)="generarNumero()" class="btn btn-primary m-2">generar numero</button>
+<button (click)="incrementar()" class="btn btn-primary m-2">incrementar</button>
+<button (click)="decrementar()" class="btn btn-primary m-2">decrementar</button>
+<h3>{{num | currency: 'USD'}}</h3>
+<div *ngIf="num > 3">
+    <p>hola</p>
+</div>
+<app-listas></app-listas>
