@@ -1,0 +1,34 @@
+<div class="container-fluid  " id="contenedor-proyecto">
+    <div class="row text-center">
+        <div class="col">
+            <h2 class="m-5">Formulario</h2>
+            <div class="form-group" id="formulario">
+                <input type="text" placeholder="nombre" class="form-control m-2" [(ngModel)]="miNombre">
+                <input type="text" placeholder="imagen" class="form-control m-2" [(ngModel)]="miImagen">
+                <input type="text" placeholder="profesion" class="form-control m-2" [(ngModel)]="miProfesion">
+                <button type="button" class="btn btn-dark text-light" (click)="enviar()">Enviar</button>
+            </div>
+        </div>
+        <div class="col">
+            <h2 class="m-5">Tabla</h2>
+            <div class="container-fluid" id="tabla">
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th scope="col" class="bg-dark text-light ">Nombre</th>
+                            <th scope="col" class="bg-dark text-light ">Imagen</th>
+                            <th scope="col" class="bg-dark text-light ">Profesion</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let personaje of personajes">
+                            <td>{{personaje.nombre}}</td>
+                            <td><img src="{{personaje.imagen}}" alt=""></td>
+                            <td>{{personaje.profesion}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

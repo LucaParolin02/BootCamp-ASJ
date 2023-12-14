@@ -6,19 +6,22 @@ import { Component } from '@angular/core';
   styleUrl: './proyecto-uno.component.css'
 })
 export class ProyectoUnoComponent {
-    valor_input: string='';
+    valorInput: string='';
     lista: { nombre: string; tachada: boolean; eliminado: boolean  }[] = [];
     listaCompletas : { nombre: string}[]=[];
     mostrarListas: boolean = false;
 
     agregarLista() {
-      this.lista.push({ nombre: this.valor_input, tachada: false, eliminado: false });
-      this.valor_input = "";
-      this.mostrarListas = false;
+      this.lista.push({ nombre: this.valorInput, tachada: false, eliminado: false });
+      this.valorInput = "";
     }
 
     tachar(indice: number){
       this.lista[indice].tachada = !this.lista[indice].tachada;
+    }
+
+    eliminar(indice: number){
+      this.lista.splice(indice,1);
     }
 
     mostrarLista(){

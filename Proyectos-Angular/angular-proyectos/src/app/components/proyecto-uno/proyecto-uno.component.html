@@ -1,9 +1,9 @@
-<div class="container-fluid vh-100 bg-success" id="contenedor-proyecto">
+<div class="container-fluid">
     <div class="container text-center p-4">
         <h1>Proyecto 1</h1>
     </div>
     <div class="container p-5 text-center">
-        <input type="text" class="input" [(ngModel)]="valor_input">
+        <input type="text" class="input" [(ngModel)]="valorInput">
         <button class="btn btn-primary m-2" type="button" (click)="agregarLista()">Agregar</button>
         <button class="btn btn-primary m-2" type="button" (click)="mostrarLista()">Mostrar</button>
         <button class="btn btn-primary m-2" type="button" (click)="completasLista()">Completas</button>
@@ -12,12 +12,15 @@
     </div>
     <div class="container text-center">
         <h2>Lista De Tareas</h2>
-        <ul class="list-group" *ngIf="mostrarLista">
-            <li *ngFor="let tarea of lista; let indice = index" class="list-group-item" [ngClass]="{'tachado': tarea.tachada}">
-                <h4>{{ tarea.nombre }}
-                    <button type="button" class="btn btn-danger" (click)="tachar(indice)">Tachar</button>
-                </h4>
-            </li>
-        </ul>
+        <div *ngIf="mostrarListas">
+            <ul class="list-group">
+                <li *ngFor="let tarea of lista; let indice = index" class="list-group-item" [ngClass]="{'tachado': tarea.tachada}">
+                    <h4>{{ tarea.nombre }}
+                        <button type="button" class="btn btn-success" (click)="tachar(indice)">Tachar</button>
+                        <button type="button" class="btn btn-danger" (click)="eliminar(indice)">Eliminar</button>
+                    </h4>
+                </li>
+            </ul>
+        </div>
     </div>
 </div>
