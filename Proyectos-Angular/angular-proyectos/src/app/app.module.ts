@@ -11,6 +11,10 @@ import { ProyectosComponent } from './components/proyetos/proyectos.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { ProyectoUnoComponent } from './components/proyecto-uno/proyecto-uno.component';
 import { ProyectoDosComponent } from './components/proyecto-dos/proyecto-dos.component';
+import { ProyectoTresComponent } from './components/proyecto-tres/proyecto-tres.component';
+import { ProyectoTresCardComponent } from './components/proyecto-tres-card/proyecto-tres-card.component';
+import { ServicioTresService } from './services/servicio-tres.service';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -20,15 +24,20 @@ import { ProyectoDosComponent } from './components/proyecto-dos/proyecto-dos.com
     ProyectosComponent,
     SidebarComponent,
     ProyectoUnoComponent,
-    ProyectoDosComponent
+    ProyectoDosComponent,
+    ProyectoTresComponent,
+    ProyectoTresCardComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     NgbModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [
+    ServicioTresService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

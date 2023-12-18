@@ -1,0 +1,23 @@
+<div class="container-fluid p-0 ">
+    <h2 class="m-5">Tabla</h2>
+    <div class="container-fluid p-0 " id="tabla">
+        <table class="table table-bordered p-0 ">
+            <thead>
+                <tr>
+                    <th scope="col" class="bg-dark text-light ">Nombre</th>
+                    <th scope="col" class="bg-dark text-light ">Especie</th>
+                    <th scope="col" class="bg-dark text-light ">Id</th>
+                    <th scope="col" class="bg-dark text-light ">Accion</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let p of personajes.results">
+                    <td>{{ p.name }}</td>
+                    <td>{{ p.species }}</td>
+                    <td>{{ p.id }}</td>
+                    <td><button type="button" class="btn  btn-dark text-light text-center" [routerLink]="['/proyecto-tres/card', p.id]">Ver</button></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
