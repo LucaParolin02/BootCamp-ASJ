@@ -1,0 +1,13 @@
+.options{
+    cursor: pointer;
+    color: white;
+}
+
+.options:hover{
+    color: rgb(8, 124, 226);
+    transition: 0.3s;
+}
+
+.active{
+    color: rgb(8, 124, 226);
+}

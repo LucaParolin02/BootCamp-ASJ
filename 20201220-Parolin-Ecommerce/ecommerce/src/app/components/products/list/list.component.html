@@ -1,0 +1,16 @@
+<div class="container">
+    <div class="row gy-3 mt-5">
+        <div class="col-3" *ngFor="let product of productsList">
+            <div class="card align-items-center">
+                <img src="{{product.images[0]}}" class="img-thumbnail" alt="{{product.title}}" (error)="imageNotFound($event)">
+                <div class="card-body my-card">
+                    <h5 class="card-title text-start">{{product.title}}</h5>
+                    <p class="card-text">{{product.description}}</p>
+                    <div class="text-center">
+                        <a routerLink="/products/{{product.id}}" class="btn btn-secondary ">See Product</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
