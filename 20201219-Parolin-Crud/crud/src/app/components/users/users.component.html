@@ -1,0 +1,41 @@
+<div class="row">
+    <div class="col-md-7">
+        <h3>Listado de Usuarios</h3>
+        <table class="table ">
+            <thead>
+                <th>Nombre</th>
+                <th>Apellido</th>
+                <th>Avatar</th>
+                <th>Action</th>
+            </thead>
+            <tbody>
+                <tr *ngFor="let usuario of usuarios">
+                    <td>{{usuario.first_name}}</td>
+                    <td>{{usuario.last_name}}</td>
+                    <td>
+                        <img src="{{usuario.avatar}}" alt="{{usuario.first_name}}">
+                    </td>
+                    <td><button class="btn btn-outline-danger btn-sm" (click)="edit(usuario)">Editar</button></td>
+                    <td><button class="btn btn-outline-danger btn-sm" (click)="delete(usuario.id)">Eliminar</button></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="col">
+        <h3>Nuevo Usuario</h3>
+        <form #myForm="ngForm" (ngSubmit)="create(myForm)">
+            <div class="mb-3">
+              <label  class="form-label">Name</label>
+              <input type="text" class="form-control" placeholder="Name" name="name" [(ngModel)]="service.usuario.name">
+            </div>
+            <div class="mb-3">
+              <label  class="form-label">Job</label>
+              <input type="text" class="form-control" placeholder="Job" name="job" [(ngModel)]="service.usuario.job">
+            </div>
+
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </form>
+    </div>
+</div>
+
+
