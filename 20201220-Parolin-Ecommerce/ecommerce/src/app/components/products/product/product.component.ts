@@ -1,7 +1,8 @@
+import { ActivatedRoute, Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
-import { ProductsService } from '../../../services/products.service';
+
 import { productInterface } from '../../../interfaces/productInterface';
-import { ActivatedRoute } from '@angular/router';
+import { ProductsService } from '../../../services/products.service';
 
 @Component({
   selector: 'app-product',
@@ -10,12 +11,10 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class ProductComponent implements OnInit{
 
-  constructor(private service: ProductsService, private route: ActivatedRoute){}
+  constructor(private productService: ProductsService, private activatedRoute: ActivatedRoute, private router: Router) {}
 
-    productImg: string= '';
-    quantity: number = 1;
-
-    product: productInterface = {
+  flagAlert: boolean = false;
+  currentProduct: productInterface = {
     id: 0,
     title: "",
     price: 0,
@@ -27,23 +26,29 @@ export class ProductComponent implements OnInit{
     description: "",
     images: []
   };
+  principalImg!: string;
+  quantity: number = 1;
 
   ngOnInit(): void {
-    
-    this.service.getProduct(this.route.snapshot.params['id']).subscribe((res)=> {
-      this.product = res;
-      this.productImg = res.images[0];
-    })
+    this.productService.getProduct(this.activatedRoute.snapshot.params['id']).subscribe(
+      (response) => {
+        console.log(response);
+        this.currentProduct = response;
+        this.principalImg = this.currentProduct.images[0];
+      });
   }
 
-  changeImage(url: string){
-    this.productImg = url;
+  changeImage(url: string): void {
+    console.log(url)
+    this.principalImg = url;
   }
 
-  addToCart(): void{
-    if(confirm("Do you want to add the product?")){
-      this.service.addToCart(this.product , this.quantity);
-      alert("Product added succesfully")
+  addToCart(): void {
+    if(confirm("Do you want to add the product?")) {
+      this.productService.addToCart(this.currentProduct, this.quantity);
+      this.flagAlert = !this.flagAlert;
+      setTimeout(()=> {this.router.navigateByUrl("/products");}, 2000);
+      
     }
   }
 }

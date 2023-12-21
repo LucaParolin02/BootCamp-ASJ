@@ -29,7 +29,31 @@ export class ProductsService {
   }
 
   public addToCart(product: productInterface, quantity: number): void {
-    this.productsCart.push({product: product, quantity: quantity});
+    let flag = false;
+    for(let productCart of this.productsCart) {
+      if (productCart.product.id == product.id) {
+        productCart.quantity += quantity;
+        flag = true;
+      }
+    }
+    if (!flag) {
+      this.productsCart.push({product: product, quantity: quantity});
+    }
     this.cartCounter += quantity;
   }
+
+  public emptyCart(): void {
+    this.productsCart = [];
+    this.cartCounter = 0;
+  }
+
+  public getCartCounter(): number {
+    return this.cartCounter;
+  }
+
+  public filterList(filterURL: string | null): Observable<productInterface[]> {
+    let urlget = this.url_products + "/?" + filterURL
+    return this.http.get<productInterface[]>(urlget)
+  }
 }
+

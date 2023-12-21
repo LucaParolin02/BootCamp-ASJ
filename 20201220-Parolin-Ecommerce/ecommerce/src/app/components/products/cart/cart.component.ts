@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { ProductsService } from '../../../services/products.service';
 import { CartProduct } from '../../../interfaces/productInterface';
+import { ProductsService } from '../../../services/products.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-cart',
@@ -9,11 +10,13 @@ import { CartProduct } from '../../../interfaces/productInterface';
 })
 export class CartComponent implements OnInit{
 
+  flagAlert: boolean = false;
   productsList!: CartProduct[];
   shipping: number = 27;
   totalPrice: number = 0;
   finalPrice: number = 0;
-  constructor(private productService: ProductsService) {}
+
+  constructor(private productService: ProductsService, private router: Router) {}
   ngOnInit(): void {
     this.productsList = this.productService.productsCart;
     for (let cartProduct of this.productsList) {
@@ -22,15 +25,19 @@ export class CartComponent implements OnInit{
     this.finalPrice = this.totalPrice + this.shipping;
   }
 
-  hasProduct(): boolean{
+  hasProducts(): boolean {
     return this.productsList.length > 0;
   }
 
-  confirmPurchase(): void{
-    if(confirm("Do you want to confirm?")){
-      this.productsList = [];
-      this.productService.cartCounter = 0;
-      this.productService.productsCart = [];
+  confirmPurchase():void {
+    if(confirm("Do you want to confirm the purchase?")) {
+      this.flagAlert = !this.flagAlert;
+      setTimeout(() => {
+        this.productsList = [];
+        this.productService.emptyCart();
+        this.flagAlert = false;
+        this.router.navigateByUrl("/products");
+      }, 3500);
     }
   }
 }

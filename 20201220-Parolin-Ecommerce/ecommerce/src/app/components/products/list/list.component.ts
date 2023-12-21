@@ -1,9 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
 
-import { ProductsService } from '../../../services/products.service';
+
 import { productInterface } from '../../../interfaces/productInterface';
-import { filter } from 'rxjs';
+import { CategorysService } from '../../../services/categorys.service';
+import { ProductsService } from '../../../services/products.service';
+
 
 @Component({
   selector: 'app-list',
@@ -11,12 +13,22 @@ import { filter } from 'rxjs';
   styleUrl: './list.component.css'
 })
 export class ListComponent implements OnInit{
-  constructor(private productService: ProductsService, private route: ActivatedRoute, private router: Router) {}
+  constructor(private productService: ProductsService, private categoryService: CategorysService,private route: ActivatedRoute) {}
   productsList: productInterface[] = []
+  categoryName: string | undefined; 
 
   ngOnInit(): void {
     this.route.paramMap.subscribe((response) => {
-      this.loadList(response.get("category") || undefined)
+      this.categoryName = undefined;
+      if (response.get("filterParams")) {
+        this.productService.filterList(response.get("filterParams")).subscribe(
+          (response) => {
+            this.productsList = response;
+          }
+        );
+      } else {
+        this.loadList(response.get("category") || undefined)
+      }
     })
   }
 
@@ -24,8 +36,12 @@ export class ListComponent implements OnInit{
     if (id) {
       this.productService.getProductsByCategory(parseInt(id)).subscribe(
         (response) => {
-          console.log(response)
           this.productsList = response;
+          this.categoryService.getById(parseInt(id)).subscribe(
+            (response) => {
+              this.categoryName = response.name;
+            }
+          );
         }
       );
     } else {
@@ -38,5 +54,9 @@ export class ListComponent implements OnInit{
 
   imageNotFound(event: Event): void {
     (event.target as HTMLImageElement).src = "https://i.pinimg.com/736x/3a/67/19/3a67194f5897030237d83289372cf684.jpg"
+  }
+
+  resetFilter(): void {
+    this.loadList();
   }
 }
