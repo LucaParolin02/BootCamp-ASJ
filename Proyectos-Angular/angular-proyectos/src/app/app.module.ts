@@ -15,6 +15,9 @@ import { ProyectoTresComponent } from './components/proyecto-tres/proyecto-tres.
 import { ProyectoTresCardComponent } from './components/proyecto-tres-card/proyecto-tres-card.component';
 import { ServicioTresService } from './services/servicio-tres.service';
 import { HttpClientModule } from '@angular/common/http';
+import { ProyectoCuatroComponent } from './components/proyecto-cuatro/proyecto-cuatro.component';
+import { MyPipesPipe } from './pipes/my-pipes.pipe';
+import { ConvertirAStringPipe } from './pipes/convertir-a-string.pipe';
 
 @NgModule({
   declarations: [
@@ -26,7 +29,10 @@ import { HttpClientModule } from '@angular/common/http';
     ProyectoUnoComponent,
     ProyectoDosComponent,
     ProyectoTresComponent,
-    ProyectoTresCardComponent
+    ProyectoTresCardComponent,
+    ProyectoCuatroComponent,
+    MyPipesPipe,
+    ConvertirAStringPipe
   ],
   imports: [
     BrowserModule,
