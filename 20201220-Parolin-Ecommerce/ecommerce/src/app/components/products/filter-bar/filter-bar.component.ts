@@ -97,7 +97,11 @@ export class FilterBarComponent implements OnInit{
     }
 
     this.filterFlag = !this.filterFlag;
-    this.router.navigateByUrl("/products/query/" + urlFilter);
+    if ( urlFilter.length > 0){
+      this.router.navigateByUrl("/products/query/" + urlFilter);
+    }else{
+      this.router.navigateByUrl("/products");
+    } 
   }
 
   clearFilters(form: NgForm): void {
