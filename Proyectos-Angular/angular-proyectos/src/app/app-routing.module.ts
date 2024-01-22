@@ -5,9 +5,14 @@ import { ProyectoDosComponent } from './components/proyecto-dos/proyecto-dos.com
 import { ProyectoTresComponent } from './components/proyecto-tres/proyecto-tres.component';
 import { ProyectoTresCardComponent } from './components/proyecto-tres-card/proyecto-tres-card.component';
 import { ProyectoCuatroComponent } from './components/proyecto-cuatro/proyecto-cuatro.component';
+import { EditComponent } from './components/proyecto-uno/edit/edit.component';
 
 const routes: Routes = [
-  {path: 'proyecto-uno', component: ProyectoUnoComponent ,},
+  {path: 'proyecto-uno', 
+  children:[
+    {path: 'edit/:id', component: EditComponent},
+    {path: "", component: ProyectoUnoComponent}
+  ]},
   {path: 'proyecto-dos', component: ProyectoDosComponent},
   {path: 'proyecto-tres',
   children:[

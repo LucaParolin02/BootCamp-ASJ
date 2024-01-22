@@ -1,26 +1,42 @@
 <div class="container-fluid">
     <div class="container text-center p-4">
-        <h1>Proyecto 1</h1>
+      <h1>Proyecto 1</h1>
     </div>
+  
     <div class="container p-5 text-center">
-        <input type="text" class="input" [(ngModel)]="valorInput">
-        <button class="btn btn-primary m-2" type="button" (click)="agregarLista()">Agregar</button>
-        <button class="btn btn-primary m-2" type="button" (click)="mostrarLista()">Mostrar</button>
-        <button class="btn btn-primary m-2" type="button" (click)="completasLista()">Completas</button>
-        <button class="btn btn-primary m-2" type="button" (click)="incompletasLista()">Incompletas</button>
-        <button class="btn btn-primary m-2" type="button" (click)="eliminadasLista()">Eliminadas</button>
+      <input type="text" class="form-control" [(ngModel)]="valorInput" placeholder="Nueva tarea">
+      <div class="mt-3">
+        <button class="btn btn-success mx-2" type="button" (click)="agregarLista()">Agregar</button>
+        <button class="btn btn-primary mx-2" type="button" (click)="mostrarLista()">Mostrar</button>
+        <button class="btn btn-primary mx-2" type="button" (click)="completasLista()">Completas</button>
+        <button class="btn btn-primary mx-2" type="button" (click)="incompletasLista()">Incompletas</button>
+        <button class="btn btn-warning mx-2" type="button" (click)="mostrarEliminados()">Ver Eliminados</button>
+      </div>
     </div>
+  
     <div class="container text-center">
-        <h2>Lista De Tareas</h2>
-        <div *ngIf="mostrarListas">
-            <ul class="list-group">
-                <li *ngFor="let tarea of lista; let indice = index" class="list-group-item" [ngClass]="{'tachado': tarea.tachada}">
-                    <h4>{{ tarea.nombre }}
-                        <button type="button" class="btn btn-success" (click)="tachar(indice)">Tachar</button>
-                        <button type="button" class="btn btn-danger" (click)="eliminar(indice)">Eliminar</button>
-                    </h4>
-                </li>
-            </ul>
-        </div>
+      <h2>Lista De Tareas</h2>
+  
+      <div *ngIf="mostrarListas || mostrarIncompletas || mostrarCompletas">
+        <ul class="list-group mt-3">
+          <li *ngFor="let tarea of filteredLista; let indice = index" class="list-group-item" [ngClass]="{'tachado': tarea.completo}">
+            <h4>{{ tarea.nombre }}
+              <button type="button" class="btn btn-success btn-sm mx-2" (click)="tachar(indice)">Tachar</button>
+              <button type="button" class="btn btn-danger btn-sm mx-2" (click)="eliminar(indice)">Eliminar</button>
+              <button type="button" class="btn btn-warning  btn-sm" [routerLink]="['/proyecto-uno/edit', tarea.id]">Editar</button>
+            </h4>
+          </li>
+        </ul>
+      </div>
+
+      <div *ngIf="mostrarEliminadas">
+        <ul class="list-group mt-3">
+            <li *ngFor="let tarea of listaEliminados" class="list-group-item" [ngClass]="{'tachado': tarea.estado}">
+                <h4>{{ tarea.nombre }}</h4>
+            </li>
+        </ul>
     </div>
-</div>
+
+    </div>
+  </div>
+  

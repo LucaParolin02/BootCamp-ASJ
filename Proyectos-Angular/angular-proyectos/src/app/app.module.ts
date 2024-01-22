@@ -18,6 +18,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { ProyectoCuatroComponent } from './components/proyecto-cuatro/proyecto-cuatro.component';
 import { MyPipesPipe } from './pipes/my-pipes.pipe';
 import { ConvertirAStringPipe } from './pipes/convertir-a-string.pipe';
+import { EditComponent } from './components/proyecto-uno/edit/edit.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { ConvertirAStringPipe } from './pipes/convertir-a-string.pipe';
     ProyectoTresCardComponent,
     ProyectoCuatroComponent,
     MyPipesPipe,
-    ConvertirAStringPipe
+    ConvertirAStringPipe,
+    EditComponent
   ],
   imports: [
     BrowserModule,
