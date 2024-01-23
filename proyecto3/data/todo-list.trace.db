@@ -1,0 +1,9 @@
+2024-01-22 12:36:54.780040-03:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "TAREAS" not found (this database is empty); SQL statement:
+select tm1_0.id,tm1_0.desc,tm1_0.estado,tm1_0.nombre from tareas tm1_0 [42104-224]
+2024-01-22 12:36:57.224971-03:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "TAREAS" not found (this database is empty); SQL statement:
+select tm1_0.id,tm1_0.desc,tm1_0.estado,tm1_0.nombre from tareas tm1_0 [42104-224]
+2024-01-22 12:37:29.329190-03:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "TAREAS" not found (this database is empty); SQL statement:
+select tm1_0.id,tm1_0.desc,tm1_0.estado,tm1_0.nombre from tareas tm1_0 [42104-224]
