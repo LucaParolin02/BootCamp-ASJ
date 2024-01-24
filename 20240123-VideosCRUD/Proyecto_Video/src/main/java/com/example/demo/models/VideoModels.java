@@ -5,6 +5,8 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 
 @Entity
 @Table(name = "videos")
@@ -14,6 +16,8 @@ public class VideoModels {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
 	private String url;
+	@NotNull(message = "no puede ser nulo el nombre")
+	@NotBlank(message = "no puede estar vacia")
 	private String nombre;
 	private String categoria;
 	private String descripcion;
@@ -28,9 +32,9 @@ public class VideoModels {
 		this.nombre = nombre;
 		this.categoria = categoria;
 		this.descripcion = descripcion;
-		this.cantidadVistas = cantidadVistas;
-		this.cantidadMeGusta = cantidadMeGusta;
-		this.cantidadNoMeGusta = cantidadNoMeGusta;
+		this.cantidadVistas = 0;
+		this.cantidadMeGusta = 0;
+		this.cantidadNoMeGusta = 0;
 	}
 
 	public VideoModels() {
