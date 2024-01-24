@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { VideoInterface } from '../../../Interfaces/VideoInterface';
 import { VideoService } from '../../../services/video.service';
+import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-list-videos',
@@ -10,6 +11,7 @@ import { VideoService } from '../../../services/video.service';
 export class ListVideosComponent implements OnInit {
   videos: VideoInterface[] = [];
   videosFiltrados: VideoInterface[] = [];
+  
   video: VideoInterface = {
     url: '',
     nombre: '',
@@ -21,7 +23,7 @@ export class ListVideosComponent implements OnInit {
   };
   buscar = '';
 
-  constructor(private videoService: VideoService) {}
+  constructor(private videoService: VideoService,private sanitizer: DomSanitizer) {}
 
   ngOnInit(): void {
     this.cargarLista();
@@ -79,4 +81,12 @@ export class ListVideosComponent implements OnInit {
     this.cargarLista();
     this.obtenerCategorias();
   }
+
+  getSafeUrl(video: VideoInterface): SafeResourceUrl | string {
+    console.log('URL antes de la seguridad:', video.url);
+    const safeUrl = this.sanitizer.bypassSecurityTrustResourceUrl(video.url);
+    console.log('URL después de la seguridad:', safeUrl);
+    return safeUrl;
+  }
+
 }
