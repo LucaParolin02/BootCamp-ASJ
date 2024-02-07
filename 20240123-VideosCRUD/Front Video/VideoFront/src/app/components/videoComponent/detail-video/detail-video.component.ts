@@ -39,6 +39,7 @@ export class DetailVideoComponent implements OnInit {
     }
     return '';
   }
+  
   like(id: number | undefined): void {
     if (id !== undefined && this.video && !this.flagLike) {
       this.video.cantidadMeGusta++;
